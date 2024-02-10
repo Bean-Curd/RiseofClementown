@@ -145,7 +145,6 @@
                   // Create cells
                   let uid = document.createElement("td");
                   let email = document.createElement("td");
-                  let password = document.createElement("td");
                   let username = document.createElement("td");
                   let buildings = document.createElement("td");
                   let medals = document.createElement("td");
@@ -154,7 +153,6 @@
                   // Insert data to cells
                   username.innerText = player.username;
                   email.innerText = player.email;
-                  password.innerText = player.password;
                   uid.innerText = childSnapshot.key;
                   buildings.innerText = buildingCount;
                   medals.innerText = medalCount;
@@ -163,7 +161,6 @@
                   // Append cells to row
                   row.appendChild(uid);
                   row.appendChild(email);
-                  row.appendChild(password);
                   row.appendChild(username);
                   row.appendChild(buildings);
                   row.appendChild(medals);
@@ -597,7 +594,7 @@
 
             // Loop through all table rows, and hide those who don't match the search query
             for (i = 0; i < tr.length; i++) {
-              td = tr[i].getElementsByTagName("td")[3];
+              td = tr[i].getElementsByTagName("td")[2];
               if (td) {
                 txtValue = td.textContent || td.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -635,7 +632,6 @@
                     <tr class="heading-td">
                       <th>UID</th>
                       <th>Email</th>
-                      <th>Password</th>
                       <th>Username</th>
                       <th>Buildings</th>
                       <th>Medals</th>
